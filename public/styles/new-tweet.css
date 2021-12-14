@@ -1,0 +1,43 @@
+.new-tweet {
+  width: 100%;
+}
+
+.new-tweet form {
+  display: flex;
+  flex-direction: column;
+}
+
+.new-tweet label {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.new-tweet textarea {
+  margin-bottom: 15px;
+  padding: 0 10px;
+  border: none;
+  border-bottom: 4px solid #545149;
+  background-color: transparent;
+}
+
+.new-tweet div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.new-tweet button {
+  padding: 5px 15px;
+  border: none;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  font-family: 'Bungee', sans-serif;
+}
+
+.new-tweet button:hover {
+  background-color: #2d3e75;
+  cursor: pointer;
+}
+
+.new-tweet output {
+  font-family: 'Bungee', sans-serif;
+}
