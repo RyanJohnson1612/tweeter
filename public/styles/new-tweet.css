@@ -41,3 +41,7 @@
 .new-tweet output {
   font-family: 'Bungee', sans-serif;
 }
+
+.tweet-error {
+  color: #A50404;
+}
