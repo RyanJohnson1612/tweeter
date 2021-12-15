@@ -66,5 +66,14 @@ $(document).ready(() => {
     })
   };
 
+  // Handles form submission for new tweet
+  $('#new-tweet-form').submit(function(event) {
+    event.preventDefault();
+    const tweetData = $(this).serialize();
+    $.post('/tweets', tweetData, (res) => {
+      console.log(res);
+    })
+  });
+
   renderTweets(data);
 });
