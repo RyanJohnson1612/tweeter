@@ -46,7 +46,7 @@ $(document).ready(() => {
     tweets.forEach((tweet) => {
       // Use createTweetElement to create a JQuery object for current tweet
       const $tweet = createTweetElement(tweet);
-      // Prepend so newer tweets are display first
+      // Prepend so newer tweets are displayed first
       $tweetsContainer.prepend($tweet);
     });
   };
@@ -66,7 +66,7 @@ $(document).ready(() => {
     event.preventDefault();
     const $tweetData = $(this).serialize();
     const $tweetText = $('#tweet-text');
-    $('.tweet-error').slideUp();  
+    $('.tweet-error').slideUp();
     // Check that tweet is valid (shorter than 140 characters and longer than 0)
     if ($tweetText.val().length <= 140 && $tweetText.val()) {
       $.post('/tweets', $tweetData, (res) => {
@@ -77,16 +77,16 @@ $(document).ready(() => {
       })
       .fail((err) => {
         console.log(`Error posting tweet: ${err.responseJSON.error}`);
-      })
+      });
     } else if ($tweetText.val().length > 140) {
       setTimeout(() => {
-        $('.error-message').text('Tweet is longer than 140 characters');    
-        $('.tweet-error').slideDown();  
+        $('.error-message').text('Tweet is longer than 140 characters');
+        $('.tweet-error').slideDown();
       }, 500);
     } else {
       setTimeout(() => {
-        $('.error-message').text('Please enter a valid tweet');    
-        $('.tweet-error').slideDown(); 
+        $('.error-message').text('Please enter a valid tweet');
+        $('.tweet-error').slideDown();
       }, 500);
     }
   });
