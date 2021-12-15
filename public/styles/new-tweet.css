@@ -42,6 +42,23 @@
   font-family: 'Bungee', sans-serif;
 }
 
-.tweet-error {
-  color: #A50404;
+.new-tweet .tweet-error {
+  display: none;
+  margin-bottom: 1em;
+  padding: 0.5em;
+  border: 4px solid #d61a1a;
+  color: #d61a1a;
+  font-weight: bold;
+}
+
+.new-tweet .tweet-error p{
+  margin: 0;
+}
+
+.new-tweet .tweet-error i{
+  margin-right: 0.5em;
+}
+
+.tweet-error-color {
+  color: #d61a1a;
 }

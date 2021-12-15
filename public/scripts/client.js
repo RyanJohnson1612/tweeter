@@ -7,7 +7,7 @@
 $(document).ready(() => {
 
   // Escapes input to prevent XSS attacks
-  const escape = function (str) {
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
@@ -66,7 +66,7 @@ $(document).ready(() => {
     event.preventDefault();
     const $tweetData = $(this).serialize();
     const $tweetText = $('#tweet-text');
-
+    $('.tweet-error').slideUp();  
     // Check that tweet is valid (shorter than 140 characters and longer than 0)
     if ($tweetText.val().length <= 140 && $tweetText.val()) {
       $.post('/tweets', $tweetData, (res) => {
@@ -79,9 +79,15 @@ $(document).ready(() => {
         console.log(`Error posting tweet: ${err.responseJSON.error}`);
       })
     } else if ($tweetText.val().length > 140) {
-      alert('Tweet is too long');
+      setTimeout(() => {
+        $('.error-message').text('Tweet is longer than 140 characters');    
+        $('.tweet-error').slideDown();  
+      }, 500);
     } else {
-      alert('There is no tweet');
+      setTimeout(() => {
+        $('.error-message').text('Please enter a valid tweet');    
+        $('.tweet-error').slideDown(); 
+      }, 500);
     }
   });
 
