@@ -6,6 +6,14 @@
 
 $(document).ready(() => {
 
+  // Escapes input to prevent XSS attacks
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+  
+
   // Creates JQuery object for a single tweet
   const createTweetElement = (tweet) => {
     const tweetTemplate = `<article class='tweet'>
@@ -16,7 +24,7 @@ $(document).ready(() => {
         </div>
         <span>${tweet.user.handle}</span>
       </header>
-      <p>${tweet.content.text}</p>
+      <p>${escape(tweet.content.text)}</p>
       <footer>
         <span>
           ${timeago.format(tweet.created_at)}
