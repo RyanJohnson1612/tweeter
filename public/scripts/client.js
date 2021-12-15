@@ -5,30 +5,6 @@
  */
 
 $(document).ready(() => {
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ]
 
   // Creates JQuery object for a single tweet
   const createTweetElement = (tweet) => {
@@ -56,14 +32,24 @@ $(document).ready(() => {
     return $tweet;
   };
 
-  // Renders all tweets from an array of tweets
+  // Renders all tweets from an array of tweets fetched from loadTweets
   const renderTweets = (tweets) => {
     const $tweetsContainer = $('#tweets-container');
     tweets.forEach((tweet) => {
       // Use createTweetElement to create a JQuery object for current tweet
       const $tweet = createTweetElement(tweet);
       $tweetsContainer.append($tweet);
+    });
+  };
+
+  // Fetch tweets from database
+  const loadTweets = () => {
+    $.get('/tweets', (tweets) => {
+      renderTweets(tweets);
     })
+    .fail((err) => {
+      console.log(`Error getting tweets: ${err.message}`);
+    });
   };
 
   // Handles form submission for new tweet
@@ -73,7 +59,11 @@ $(document).ready(() => {
     $.post('/tweets', tweetData, (res) => {
       console.log(res);
     })
+    .fail((err) => {
+      console.log(`Error posting tweet: ${err.message}`);
+    })
   });
 
-  renderTweets(data);
+  // Load all the tweets when document finishes loading
+  loadTweets();
 });
