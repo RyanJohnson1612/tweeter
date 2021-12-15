@@ -38,7 +38,8 @@ $(document).ready(() => {
     tweets.forEach((tweet) => {
       // Use createTweetElement to create a JQuery object for current tweet
       const $tweet = createTweetElement(tweet);
-      $tweetsContainer.append($tweet);
+      // Prepend so newer tweets are display first
+      $tweetsContainer.prepend($tweet);
     });
   };
 
@@ -48,20 +49,32 @@ $(document).ready(() => {
       renderTweets(tweets);
     })
     .fail((err) => {
-      console.log(`Error getting tweets: ${err.message}`);
+      console.log(`Error getting tweets: ${err.responseJSON.error}`);
     });
   };
 
   // Handles form submission for new tweet
   $('#new-tweet-form').submit(function(event) {
     event.preventDefault();
-    const tweetData = $(this).serialize();
-    $.post('/tweets', tweetData, (res) => {
-      console.log(res);
-    })
-    .fail((err) => {
-      console.log(`Error posting tweet: ${err.message}`);
-    })
+    const $tweetData = $(this).serialize();
+    const $tweetText = $('#tweet-text');
+
+    // Check that tweet is valid (shorter than 140 characters and longer than 0)
+    if ($tweetText.val().length <= 140 && $tweetText.val()) {
+      $.post('/tweets', $tweetData, (res) => {
+        // Clear textarea on succesful submission and trigger input event, so that remaining character count changes to 140
+        $tweetText.val('').trigger('input');
+        $('#tweets-container').empty();
+        loadTweets();
+      })
+      .fail((err) => {
+        console.log(`Error posting tweet: ${err.responseJSON.error}`);
+      })
+    } else if ($tweetText.val().length > 140) {
+      alert('Tweet is too long');
+    } else {
+      alert('There is no tweet');
+    }
   });
 
   // Load all the tweets when document finishes loading
