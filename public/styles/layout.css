@@ -33,10 +33,31 @@ main {
   background-color: #F4F1EC;
 }
 
+.scroll-btn {
+  display: none;
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 2em;
+  border: none;
+  color: #FFFFFF;
+  background-color: #EBBB37;
+}
+  
+.scroll-btn:hover {
+  cursor: pointer
+}
+  
+.scroll-btn:hover i{
+  animation: reverse-bob 0.75s infinite;
+}
+
 @media only screen and (min-width: 1024px) {
   body {
     flex-direction: row;
-    max-width: 1500px;
+    max-width: 1800px;
     margin: 0 auto;
   }
 

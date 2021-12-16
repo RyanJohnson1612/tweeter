@@ -15,6 +15,22 @@ $(document).ready(() => {
       $('.new-tweet').slideUp();
     }
   });
+    
+  // Display scroll to top button on scroll
+  $(window).on('scroll', () => {
+    $('.scroll-btn').show();
+  });
+    
+  // Click event handler for scroll to top button
+  $('.scroll-btn').on('click', () => {
+    // Animate scroll to top
+    $("html, body").animate({ scrollTop: 0 }, 200);
+      
+    // wait for scroll animation to finish before hiding button
+    setTimeout(() => {
+      $('.scroll-btn').hide();
+    }, 250);
+  });
 
   // Escapes input to prevent XSS attacks
   const escape = function(str) {
