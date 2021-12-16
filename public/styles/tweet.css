@@ -59,7 +59,7 @@ article.tweet footer i {
 }
 
 article.tweet footer i:hover {
-  color: #ebbb37;
+  color: #EBBB37;
   cursor: pointer;
   transition: 0.1s ease-in;
 }

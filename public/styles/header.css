@@ -9,3 +9,10 @@
   background-image: url('/images/debut-light.png');
   color: #FFFFFF;
 }
+
+@media only screen and (min-width: 1024px) {
+  .profile-header {
+    width: 30%;
+    margin: 200px 5%;
+  }
+}
