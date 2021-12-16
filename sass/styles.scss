@@ -1,5 +1,9 @@
+/* import helper styles first */ 
 @import 'variables';
 @import 'animations';
+@import 'mediaqueries';
+
+/* import content styles */
 @import 'layout';
 @import 'header';
 @import 'nav';

@@ -21,6 +21,12 @@ body {
   background-color: #F4F1EC;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif; 
+
+  @include for-desktop-up {
+    flex-direction: row;
+    max-width: 1800px;
+    margin: 0 auto;
+  }
 }
 
 /*
@@ -31,6 +37,11 @@ main {
   width: 90%;
   margin: 1em 5%;
   background-color: #F4F1EC;
+
+  @include for-desktop-up {
+    width: 50%;
+    margin: 200px 5%;
+  }
 }
 
 .scroll-btn {
@@ -52,17 +63,4 @@ main {
   
 .scroll-btn:hover i{
   animation: reverse-bob 0.75s infinite;
-}
-
-@media only screen and (min-width: 1024px) {
-  body {
-    flex-direction: row;
-    max-width: 1800px;
-    margin: 0 auto;
-  }
-
-  main {
-    width: 50%;
-    margin: 200px 5%;
-  }
 }

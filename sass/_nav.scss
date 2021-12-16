@@ -14,6 +14,10 @@ nav {
   .logo {
     font-family: $bungee;
     font-size: 1em;
+
+    @include for-tablet-up {
+      font-size: 1.5em;
+    }
   }
 
   .nav-right {
@@ -35,16 +39,10 @@ nav {
         animation: bob 0.75s infinite;
       }
     }
-  }
-}
 
-@media only screen and (min-width: 768px) {
-  .logo {
-    font-size: 1.5em;
-  }
-
-  .nav-right {
-    font-size: 1em;
+    @include for-tablet-up {
+      font-size: 1em;
+    }
   }
 }
 

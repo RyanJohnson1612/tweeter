@@ -1,3 +1,4 @@
+/* import helper styles first */
 /* Colour variables */
 /* Font variables */
 @keyframes bob {
@@ -22,6 +23,7 @@
     transform: translateY(0);
   }
 }
+/* import content styles */
 /*
  * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
  * https://css-tricks.com/international-box-sizing-awareness-day/
@@ -46,6 +48,13 @@ body {
   font-size: 24px;
   font-family: "Source Sans Pro", sans-serif;
 }
+@media only screen and (min-width: 1024px) {
+  body {
+    flex-direction: row;
+    max-width: 1800px;
+    margin: 0 auto;
+  }
+}
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
@@ -54,6 +63,12 @@ main {
   width: 90%;
   margin: 1em 5%;
   background-color: #F4F1EC;
+}
+@media only screen and (min-width: 1024px) {
+  main {
+    width: 50%;
+    margin: 200px 5%;
+  }
 }
 
 .scroll-btn {
@@ -77,18 +92,6 @@ main {
   animation: reverse-bob 0.75s infinite;
 }
 
-@media only screen and (min-width: 1024px) {
-  body {
-    flex-direction: row;
-    max-width: 1800px;
-    margin: 0 auto;
-  }
-
-  main {
-    width: 50%;
-    margin: 200px 5%;
-  }
-}
 .profile-header {
   display: flex;
   flex-direction: column;
@@ -100,13 +103,13 @@ main {
   background-image: url("/images/debut-light.png");
   color: #FFFFFF;
 }
-
 @media only screen and (min-width: 1024px) {
   .profile-header {
     width: 30%;
     margin: 200px 5%;
   }
 }
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -123,6 +126,11 @@ nav {
 nav .logo {
   font-family: "Bungee", sans-serif;
   font-size: 1em;
+}
+@media only screen and (min-width: 768px) {
+  nav .logo {
+    font-size: 1.5em;
+  }
 }
 nav .nav-right {
   display: flex;
@@ -141,16 +149,12 @@ nav .nav-right:hover i {
   color: #EBBB37;
   animation: bob 0.75s infinite;
 }
-
 @media only screen and (min-width: 768px) {
-  .logo {
-    font-size: 1.5em;
-  }
-
-  .nav-right {
+  nav .nav-right {
     font-size: 1em;
   }
 }
+
 .new-tweet {
   display: none;
   width: 100%;
