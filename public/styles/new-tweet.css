@@ -1,5 +1,7 @@
 .new-tweet {
+  display: none;
   width: 100%;
+  margin-bottom: 2em;
 }
 
 .new-tweet form {

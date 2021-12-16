@@ -29,6 +29,15 @@ nav {
   color: #FFFFFF;
 }
 
+.nav-right:hover {
+  cursor: pointer;
+}
+  
+.nav-right:hover i{
+  color: #EBBB37;
+  animation: bob 0.75s infinite;
+}
+
 @media only screen and (min-width: 768px) {
   .logo {
     font-size: 1.5em;

@@ -6,6 +6,16 @@
 
 $(document).ready(() => {
 
+  // Click event handler for write new tweet button
+  $('.nav-right').on('click', () => {
+    if ($('.new-tweet').css('display') === 'none') {
+      $('.new-tweet').slideDown();
+      $('#tweet-text').focus();
+    } else {
+      $('.new-tweet').slideUp();
+    }
+  });
+
   // Escapes input to prevent XSS attacks
   const escape = function(str) {
     let div = document.createElement("div");
