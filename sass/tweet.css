@@ -9,8 +9,8 @@ article.tweet:first-of-type {
 }
 
 article.tweet:hover {
-  box-shadow: 7px 7px 0px 0px rgba(126, 126, 126, 0.5);
-  -webkit-box-shadow: 7px 7px 0px 0px rgba(126, 126, 126, 0.5);
+  box-shadow:  7px 7px 0px 0px rgba(126, 126, 126, 0.5);
+  -webkit-box-shadow:  7px 7px 0px 0px rgba(126, 126, 126, 0.5);
 }
 
 article.tweet header {
@@ -54,7 +54,7 @@ article.tweet footer {
 
 article.tweet footer span {
   font-size: 20px;
-  font-weight: bold;
+  font-weight: bold
 }
 
 article.tweet footer i {

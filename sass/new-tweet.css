@@ -32,7 +32,7 @@
   border: none;
   background-color: #4056A1;
   color: #FFFFFF;
-  font-family: "Bungee", sans-serif;
+  font-family: 'Bungee', sans-serif;
 }
 
 .new-tweet button:hover {
@@ -41,7 +41,7 @@
 }
 
 .new-tweet output {
-  font-family: "Bungee", sans-serif;
+  font-family: 'Bungee', sans-serif;
 }
 
 .new-tweet .tweet-error {
@@ -53,11 +53,11 @@
   font-weight: bold;
 }
 
-.new-tweet .tweet-error p {
+.new-tweet .tweet-error p{
   margin: 0;
 }
 
-.new-tweet .tweet-error i {
+.new-tweet .tweet-error i{
   margin-right: 0.5em;
 }
 

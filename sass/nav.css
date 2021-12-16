@@ -13,7 +13,7 @@ nav {
 }
 
 .logo {
-  font-family: "Bungee", sans-serif;
+  font-family: 'Bungee', sans-serif;
   font-size: 1em;
 }
 
@@ -32,8 +32,8 @@ nav {
 .nav-right:hover {
   cursor: pointer;
 }
-
-.nav-right:hover i {
+  
+.nav-right:hover i{
   color: #EBBB37;
   animation: bob 0.75s infinite;
 }
@@ -47,3 +47,4 @@ nav {
     font-size: 1em;
   }
 }
+

@@ -6,7 +6,6 @@
 html {
   box-sizing: border-box;
 }
-
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -14,18 +13,20 @@ html {
 /*
  * Global layout stuff
  */
+
 body {
   display: flex;
   flex-direction: column;
   color: #545149;
   background-color: #F4F1EC;
   font-size: 24px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: 'Source Sans Pro', sans-serif; 
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
 main {
   width: 90%;
   margin: 1em 5%;
@@ -44,12 +45,12 @@ main {
   color: #FFFFFF;
   background-color: #EBBB37;
 }
-
+  
 .scroll-btn:hover {
-  cursor: pointer;
+  cursor: pointer
 }
-
-.scroll-btn:hover i {
+  
+.scroll-btn:hover i{
   animation: reverse-bob 0.75s infinite;
 }
 
