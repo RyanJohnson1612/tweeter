@@ -6,6 +6,7 @@
 html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -55,12 +56,12 @@ main {
   border: none;
   color: #FFFFFF;
   background-color: #EBBB37;
-}
-  
-.scroll-btn:hover {
-  cursor: pointer
-}
-  
-.scroll-btn:hover i{
-  animation: reverse-bob 0.75s infinite;
+
+  &:hover {
+    cursor: pointer;
+
+    i {
+      animation: reverse-bob 0.75s infinite;
+    }
+  }
 }

@@ -7,9 +7,9 @@ $(document).ready(function() {
 
     // Add tweet-error class if tweet is over 140 characters, remove it when less than 140 
     if(charsLeft < 0) {
-      $('.counter').addClass('tweet-error-color');
+      $('.counter').addClass('tweet-char-error');
     } else {
-      $('.counter').removeClass('tweet-error-color');
+      $('.counter').removeClass('tweet-char-error');
     }
   })
 });

@@ -5,7 +5,6 @@
  */
 
 $(document).ready(() => {
-
   // Click event handler for write new tweet button
   $('.nav-right').on('click', () => {
     if ($('.new-tweet').css('display') === 'none') {
@@ -38,7 +37,6 @@ $(document).ready(() => {
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
-  
 
   // Creates JQuery object for a single tweet
   const createTweetElement = (tweet) => {
@@ -69,6 +67,7 @@ $(document).ready(() => {
   // Renders all tweets from an array of tweets fetched from loadTweets
   const renderTweets = (tweets) => {
     const $tweetsContainer = $('#tweets-container');
+
     tweets.forEach((tweet) => {
       // Use createTweetElement to create a JQuery object for current tweet
       const $tweet = createTweetElement(tweet);
@@ -89,10 +88,13 @@ $(document).ready(() => {
 
   // Handles form submission for new tweet
   $('#new-tweet-form').submit(function(event) {
+    // Prevent default html form submission
     event.preventDefault();
     const $tweetData = $(this).serialize();
     const $tweetText = $('#tweet-text');
+    // Hide error on submit
     $('.tweet-error').slideUp();
+
     // Check that tweet is valid (shorter than 140 characters and longer than 0)
     if ($tweetText.val().length <= 140 && $tweetText.val()) {
       $.post('/tweets', $tweetData, (res) => {
